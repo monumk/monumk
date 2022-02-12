@@ -1,0 +1,40 @@
+<div class="container-fluid">
+    
+    <div class="row">
+        <div class="col-6">
+            <div class="float-end">
+                <h1>Welcome, Please Sign In</h1>
+                <h2><u>Returning Customer</u></h2>
+            <p>I am a returning customer</p>
+
+            <form action="" [formGroup]="frmLogin" class="fw-bold" (submit)="VerifyLogin(frmLogin.value)">
+                <div class="my-4">
+                    <label class="form-label">Enter EmailId</label>
+                    <input type="email" class="form-control" formControlName="email" placeholder="Enter EmailId" required>
+                </div>
+
+                <div class="mb-4">
+                    <label class="form-label">Enter Password</label>
+                    <input type="password" class="form-control" formControlName="password" placeholder="Enter Password" required>
+                </div>
+
+                <div class="mb-4">
+                    <button class="btn btn-danger" [disabled]="frmLogin.invalid">Login</button>
+                </div>
+                <!-- <a routerLink="forget">Password forgotten? Click here.</a> -->
+            </form>
+            </div>
+        </div>
+
+        <div class="col-6">
+            <div class="float-start">
+                <h2><u>New Customer</u></h2>
+                <p>I am a new Customer</p>
+                <p>By creating an account at ishop Shopping Model you <br>will be able to shop faster, be up to date on an orders<br> status, and keep track of the orders you have<br> previously made.</p>
+
+                <a class="btn btn-primary btn-sm" routerLink="/register">Register</a>
+
+            </div>
+        </div>
+    </div>
+</div>

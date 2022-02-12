@@ -1,0 +1,106 @@
+<div class="container-fluid">
+    <form action="" [formGroup]="frmRegister" (submit)="SubmitData(frmRegister.value)">
+        <h1>My Account Information</h1>
+        <p><font color="red">NOTE:</font> If you already have an account with us, please login at the <a routerLink="/login">login page.</a></p>
+        <h2><u>Your Personal Details</u></h2>
+
+
+    <div class="row">
+        <div class="col-6">
+            <div class="my-4">
+                <label class="form-label fw-bold">Create UserId</label>
+                <input type="text" formControlName="userId" required class="form-control w-75" placeholder="Create UserId" (keyup)="VerifyUserId($event)">
+                <p>{{userMessage}}</p>
+                <!-- <p class="text-danger" *ngIf="frmRegister.invalid">UserId Required</p> -->
+            </div>
+
+            <div class="mb-4">
+                <label class="form-label fw-bold">Enter Last Name</label>
+                <input type="text" formControlName="lastName" required class="form-control w-75" placeholder="Enter Last Name">
+                <!-- <p class="text-danger" *ngIf="frmRegister.invalid">Last Name Required</p> -->
+            </div>
+
+            <div class="mb-4">
+                <label class="form-label fw-bold">Select Gender</label>
+                <div>
+                    <input type="radio" name="gender" formControlName="gender" class="form-check-input" value="Male"> Male
+                    <input type="radio" name="gender" formControlName="gender"  class="form-check-input" value="Female"> Female
+                </div>
+                <!-- <p class="text-danger" *ngIf="frmRegister.invalid">Select Gender</p> -->
+            </div>
+
+            <div class="mb-4">
+                <label class="form-label fw-bold">Enter Mobile</label>
+                <input type="text" formControlName="mobile" required class="form-control w-75" placeholder="Enter Mobile">
+                <!-- <p class="text-danger" *ngIf="frmRegister.invalid">Mobile Required</p> -->
+            </div>
+
+            <div class="mb-4">
+                <label class="form-label fw-bold">Select Date of Birth</label>
+                <input type="date" formControlName="dateOfBirth" required class="form-control w-75">
+                <!-- <p class="text-danger" *ngIf="frmRegister.invalid">Address Required</p> -->
+            </div>
+
+
+        </div>
+        <div class="col-6">
+            <div class="my-4">
+                <label class="form-label fw-bold">Enter First Name</label>
+                <input type="text" formControlName="firstName" required class="form-control w-75" placeholder="Enter First Name">
+                <!-- <p class="text-danger" *ngIf="frmRegister.invalid">FirstName Required</p> -->
+            </div>
+
+            <div class="mb-4">
+                <label class="form-label fw-bold">Create Password</label>
+                <input type="password" formControlName="password" required class="form-control w-75" placeholder="Create Password">
+                <!-- <p class="text-danger" *ngIf="frmRegister.invalid">Password Required</p> -->
+            </div>
+
+
+            <div class="mb-4">
+                <label class="form-label fw-bold">Enter Email</label>
+                <input type="email" formControlName="email" required class="form-control w-75" placeholder="Enter Email">
+                <!-- <p class="text-danger" *ngIf="frmRegister.invalid">Email Required</p> -->
+            </div>
+
+            <div class="mb-4">
+                <label class="form-label fw-bold">Enter Address</label>
+                <input type="text" formControlName="address" required class="form-control w-75" placeholder="Enter Address">
+                <!-- <p class="text-danger" *ngIf="frmRegister.invalid">Address Required</p> -->
+            </div>
+
+        </div>
+    </div>
+
+    <div class="d-flex justify-content-center">
+        <div class="mb-4">
+            <button class="btn btn-danger" [disabled]="frmRegister.invalid">Register</button>
+        </div>
+    </div>
+
+        
+
+        
+
+        
+
+        
+
+
+        
+
+        
+
+        
+
+
+        
+
+        
+
+        
+
+
+
+    </form>
+</div>

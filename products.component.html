@@ -1,0 +1,39 @@
+
+<div>
+    <div class="row">
+        <div class="col-6">
+                <div>
+                    <select class="form-select" (change)="ChangeCategory($event)">
+                      <option *ngFor="let item of categories" [value]="item.categoryName">{{item.categoryName | uppercase}}</option>
+                    </select>
+                </div>
+        </div>
+
+        <div class="col-6">
+                <div class="input-group">
+                    <input type="text" class="form-control" ngModel name="search" #search="ngModel" placeholder="Search" (keyup)="GetSearchProductName($event)">
+                    <button class="btn btn-warning" (click)="SearchProduct()"><span class="bi bi-search"></span></button>
+                </div>
+        </div>
+        
+
+        <!-- <div class="col-3"> -->
+            <!-- <button class=" btn btn-primary border border-1 border-dark btn-sm">Cart Items [{{cartItems.length}}]</button> -->
+        <!-- </div> -->
+    </div>
+</div>
+
+
+
+<div class="d-flex flex-wrap justify-content-center">
+    <div class="card p-1 border border-0" *ngFor="let item of products" style="width: 170px;margin: 40px;">
+        <img [src]="item.image" height="150" class="card-img-top" alt="">
+        <div class="card-body">
+            <p align="center">{{item.name}}</p>
+            <p align="center">{{item.price | currency}}</p>
+        </div>
+        <div class="card-footer">
+          <button class="btn btn-warning" (click)="AddtoCart(item.id)"><span class="bi bi-cart4"></span> Add to Cart</button>
+        </div>
+    </div>
+</div>
